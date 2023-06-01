@@ -23,7 +23,7 @@ def delete_item(shopping_list):
         print("Invalid input. Enter a valid index or 'q' to cancel.")
 
 def main():
-    shopping_list = ["apple"] #####
+    shopping_list = ["apple", "banana", "smurfs movie on blu ray dvd"] #####
     while True:
         print("\nOptions:")
         print("1. Display shopping list")
