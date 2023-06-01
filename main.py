@@ -2,7 +2,7 @@ def display_shopping_list(shopping_list):
     if not shopping_list:
         print("Your shopping list is empty.")
     else:
-        print(f"Your shopping list: {shopping_list}")
+        print(f"Your shopping list: {shopping_list}") #####
 
 def add_item(shopping_list):
     pass
@@ -23,7 +23,7 @@ def delete_item(shopping_list):
         print("Invalid input. Enter a valid index or 'q' to cancel.")
 
 def main():
-    shopping_list = ["apple"]
+    shopping_list = ["apple"] #####
     while True:
         print("\nOptions:")
         print("1. Display shopping list")
