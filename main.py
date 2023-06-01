@@ -2,7 +2,9 @@ def display_shopping_list(shopping_list):
     if not shopping_list:
         print("Your shopping list is empty.")
     else:
-        print(f"Your shopping list: {shopping_list}") #####
+      print("Your shopping list: ") 
+      for item in shopping_list:
+        print(item)
 
 def add_item(shopping_list):
     pass
@@ -34,8 +36,8 @@ def main():
         if choice == '1':
             display_shopping_list(shopping_list)
         elif choice == '2':
-            print("do something with this")
-            #call function to add an item to the list
+            addlist = input("What item would you like to add? ")
+            shopping_list.append(addlist)
         elif choice == '3':
             delete_item(shopping_list)
         elif choice == '4':
