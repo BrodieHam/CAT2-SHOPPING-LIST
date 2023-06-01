@@ -23,7 +23,7 @@ def delete_item(shopping_list):
         print("Invalid input. Enter a valid index or 'q' to cancel.")
 
 def main():
-    shopping_list = []
+    shopping_list = ["apple"]
     while True:
         print("\nOptions:")
         print("1. Display shopping list")
@@ -34,6 +34,7 @@ def main():
         if choice == '1':
             display_shopping_list(shopping_list)
         elif choice == '2':
+            print("do something with this")
             #call function to add an item to the list
         elif choice == '3':
             delete_item(shopping_list)
