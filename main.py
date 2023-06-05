@@ -52,7 +52,7 @@ def memoryGame(shopping_list):
   
 
 def main():
-    shopping_list = ["apple", "banana", "smurfs movie on blu ray dvd"] #####
+    shopping_list = ["apple", "banana", "orange"] #####
     while True:
         print("\nOptions:")
         print("1. Display shopping list")
