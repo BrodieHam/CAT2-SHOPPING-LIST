@@ -1,8 +1,8 @@
-def display_shopping_list(shopping_list,name):
+def display_shopping_list(shopping_list):
     if not shopping_list:
         print("Your shopping list is empty.")
     else:
-      print(f"{name}'s Shopping list: ") 
+      print("Your Shopping list: ") 
       for item in shopping_list:
         print(item)
 
@@ -26,8 +26,6 @@ def delete_item(shopping_list):
 
 def main():
     shopping_list = ["apple", "banana", "smurfs movie on blu ray dvd"] #####
-    name = input("What's your name? ")
-    
     while True:
         print("\nOptions:")
         print("1. Display shopping list")
@@ -36,14 +34,14 @@ def main():
         print("4. Quit")
         choice = input("Enter your choice: ")
         if choice == '1':
-            display_shopping_list(shopping_list,name)
+            display_shopping_list(shopping_list)
         elif choice == '2':
             addlist = input("What item would you like to add? ")
             shopping_list.append(addlist)
         elif choice == '3':
             delete_item(shopping_list)
         elif choice == '4':
-          print(f"Thanks for shopping with us, {name}")  
+          print("Thanks for shopping with us")  
           break
         else:
             print("Invalid choice. Please try again.")
