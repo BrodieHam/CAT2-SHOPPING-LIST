@@ -1,6 +1,7 @@
 ### SHOPPING LIST GAME ###
 ## By Lachlan and Brody ##
 import os
+import random
 def clearConsole():
   os.system("clear")
   
@@ -50,6 +51,13 @@ def memoryGame(shopping_list):
   correct = len(guessedlist)
   print(f"You got {correct} correct out of ", len(shopping_list))
   
+def STD():
+  game_list = ['apple','banana','cake','donut','egg','fish','grape','ham','ice','jam','kiwi','lemon','melon','nut','orange','pizza','quiche','rice','sushi','turkey','utensils','vinegar','waffle','yogurt','zucchini']
+  STDGuesses = len(game_list)
+  STDGuessed = []
+  STDGuess = input("STD? ")
+  ### code here
+  
 
 def main():
     shopping_list = ["apple", "banana", "orange"] #####
@@ -57,8 +65,9 @@ def main():
         print("1. Display shopping list")
         print("2. Add item")
         print("3. Delete item")
-        print("4. Memory Game")
-        print("5. Quit")
+        print("4. Memory game")
+        print("5. Spot the difference Game")
+        print("6. Quit")
         choice = input("Enter your choice: ")
         clearConsole()
         if choice == '1':
@@ -72,12 +81,12 @@ def main():
         elif choice == '4':
           memoryGame(shopping_list)
         elif choice == '5':
+          STD(shopping_list)
+        elif choice == '6':
           print("Thanks for shopping at Coles")  
           break
         else:
           print("Invalid choice. Please try again.")
-        print("\nOptions:")
         
-
 
 main()
