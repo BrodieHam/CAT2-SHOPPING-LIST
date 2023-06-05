@@ -54,7 +54,6 @@ def memoryGame(shopping_list):
 def main():
     shopping_list = ["apple", "banana", "orange"] #####
     while True:
-        print("\nOptions:")
         print("1. Display shopping list")
         print("2. Add item")
         print("3. Delete item")
@@ -69,14 +68,15 @@ def main():
           print(f"Added {addlist} to your Shopping List.")
           shopping_list.append(addlist)
         elif choice == '3':
-            delete_item(shopping_list)
+          delete_item(shopping_list)
         elif choice == '4':
-            memoryGame(shopping_list)
+          memoryGame(shopping_list)
         elif choice == '5':
           print("Thanks for shopping at Coles")  
           break
         else:
-            print("Invalid choice. Please try again.")
+          print("Invalid choice. Please try again.")
+        print("\nOptions:")
         
 
 
