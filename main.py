@@ -2,7 +2,7 @@ def display_shopping_list(shopping_list,name):
     if not shopping_list:
         print("Your shopping list is empty.")
     else:
-      print("Shopping list: ") 
+      print(f"{name}'s Shopping list: ") 
       for item in shopping_list:
         print(item)
 
