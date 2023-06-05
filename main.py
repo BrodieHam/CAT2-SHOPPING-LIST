@@ -1,3 +1,5 @@
+### SHOPPING LIST GAME ###
+## By Lachlan and Brody ##
 import os
 def clearConsole():
   os.system("clear")
@@ -28,6 +30,27 @@ def delete_item(shopping_list):
     except ValueError:
         print("Invalid input. Enter a valid index or 'q' to cancel.")
 
+def memoryGame(shopping_list):
+  score = 0
+  guesses = len(shopping_list)
+  guessedlist = []
+  for i in range(len(shopping_list)):
+    itemchoice = input(f"Choice {i+1}: ")
+    if itemchoice in shopping_list:
+      if itemchoice in guessedlist:
+        print("Already guessed. Try again")
+        while itemchoice in guessedlist:
+          itemchoice = input(f"Choice {i}")
+      else:
+        score = score + 1
+        guessedlist.append(itemchoice)
+    guesses = guesses - 1
+    if guesses == 0:
+      break
+  correct = len(guessedlist)
+  print(f"You got {correct} correct out of ", len(shopping_list))
+  
+
 def main():
     shopping_list = ["apple", "banana", "smurfs movie on blu ray dvd"] #####
     while True:
@@ -35,7 +58,8 @@ def main():
         print("1. Display shopping list")
         print("2. Add item")
         print("3. Delete item")
-        print("4. Quit")
+        print("4. Memory Game")
+        print("5. Quit")
         choice = input("Enter your choice: ")
         clearConsole()
         if choice == '1':
@@ -46,6 +70,8 @@ def main():
         elif choice == '3':
             delete_item(shopping_list)
         elif choice == '4':
+            memoryGame(shopping_list)
+        elif choice == '5':
           print("Thanks for shopping at Coles")  
           break
         else:
