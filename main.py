@@ -66,6 +66,7 @@ def main():
           display_shopping_list(shopping_list)
         elif choice == '2':
           addlist = input("What item would you like to add? ")
+          print(f"Added {addlist} to your Shopping List.")
           shopping_list.append(addlist)
         elif choice == '3':
             delete_item(shopping_list)
