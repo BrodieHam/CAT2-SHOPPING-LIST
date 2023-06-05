@@ -1,6 +1,10 @@
+import os
+def clearConsole():
+  os.system("clear")
+  
 def display_shopping_list(shopping_list):
     if not shopping_list:
-        print("Your shopping list is empty.")
+        print("Your shopping list is empty.\n")
     else:
       print("Your Shopping list: ") 
       for item in shopping_list:
@@ -33,18 +37,20 @@ def main():
         print("3. Delete item")
         print("4. Quit")
         choice = input("Enter your choice: ")
+        clearConsole()
         if choice == '1':
-            display_shopping_list(shopping_list)
+          display_shopping_list(shopping_list)
         elif choice == '2':
-            addlist = input("What item would you like to add? ")
-            shopping_list.append(addlist)
+          addlist = input("What item would you like to add? ")
+          shopping_list.append(addlist)
         elif choice == '3':
             delete_item(shopping_list)
         elif choice == '4':
-          print("Thanks for shopping with us")  
+          print("Thanks for shopping at Coles")  
           break
         else:
             print("Invalid choice. Please try again.")
+        
 
 
 main()
