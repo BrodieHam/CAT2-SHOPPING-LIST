@@ -56,23 +56,36 @@ def STD():
   score = 0
   game_list = ['apple','banana','cake','donut','egg','fish','grape','ham','ice','jam','kiwi','lemon','melon','nut','orange','pizza','quiche','rice','sushi','turkey','utensils','vinegar','waffle','yogurt','zucchini']
   
-  STDGuesses = len(game_list)
+  STDGuesses = 3
   STDGuessed = []
   removed_list = []
   for i in range(10):
     number = random.randint(1,len(game_list))
     removed_list.append(game_list[number - 1])
     game_list.pop(number - 1)
-  print(game_list)
-
+  for i in range(len(removed_list)):
+    print(removed_list[i])
+  time.sleep(15)
+  clearConsole()
   
+  added1 = random.randint(1,len(game_list))
+  removed_list.append(game_list[added1 - 1])
+  added2 = random.randint(1,len(game_list))
+  removed_list.append(game_list[added2 - 1])
+  
+  removed = random.randint(1,len(game_list))
+  removed_list.pop(removed - 1)
   
   for i in range(len(removed_list)):
+    print(removed_list[i])
+
+  
+  while True:
     itemchoice = input(f"Choice {i+1}: ")
-    if itemchoice in removed_list:
+    if itemchoice == added1 or itemchoice == added2 or itemchoice == removed:
       if itemchoice in STDGuessed:
         print("Already guessed. Try again")
-        while itemchoice in STDGuessed:
+        while itemchoice in game_list:
           itemchoice = input(f"Choice {i}")
       else:
         score = score + 1
@@ -81,8 +94,8 @@ def STD():
     if STDGuesses == 0:
       break
   correct = len(STDGuessed)
-  print(f"You got {correct} correct out of 10")
-  
+  print(f"You got {correct} correct out of 3")
+
 
 def main():
     shopping_list = ["apple", "banana", "orange"] #####
