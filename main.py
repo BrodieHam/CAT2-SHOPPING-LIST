@@ -2,6 +2,7 @@
 ## By Lachlan and Brody ##
 import os
 import random
+import time
 def clearConsole():
   os.system("clear")
   
@@ -52,17 +53,41 @@ def memoryGame(shopping_list):
   print(f"You got {correct} correct out of ", len(shopping_list))
   
 def STD():
+  score = 0
   game_list = ['apple','banana','cake','donut','egg','fish','grape','ham','ice','jam','kiwi','lemon','melon','nut','orange','pizza','quiche','rice','sushi','turkey','utensils','vinegar','waffle','yogurt','zucchini']
+  
   STDGuesses = len(game_list)
   STDGuessed = []
-  STDGuess = input("STD? ")
-  ### code here
+  removed_list = []
+  for i in range(10):
+    number = random.randint(1,len(game_list))
+    removed_list.append(game_list[number - 1])
+    game_list.pop(number - 1)
+  print(game_list)
+
+  
+  
+  for i in range(len(removed_list)):
+    itemchoice = input(f"Choice {i+1}: ")
+    if itemchoice in removed_list:
+      if itemchoice in STDGuessed:
+        print("Already guessed. Try again")
+        while itemchoice in STDGuessed:
+          itemchoice = input(f"Choice {i}")
+      else:
+        score = score + 1
+        STDGuessed.append(itemchoice)
+    STDGuesses = STDGuesses - 1
+    if STDGuesses == 0:
+      break
+  correct = len(STDGuessed)
+  print(f"You got {correct} correct out of 10")
   
 
 def main():
     shopping_list = ["apple", "banana", "orange"] #####
     while True:
-        print("1. Display shopping list")
+        print("\n1. Display shopping list")
         print("2. Add item")
         print("3. Delete item")
         print("4. Memory game")
@@ -81,7 +106,7 @@ def main():
         elif choice == '4':
           memoryGame(shopping_list)
         elif choice == '5':
-          STD(shopping_list)
+          STD()
         elif choice == '6':
           print("Thanks for shopping at Coles")  
           break
