@@ -57,9 +57,10 @@ def STD(): # Spot the Difference
   game_list = ['apple','banana','cake','donut','egg','fish','grape','ham','ice','jam','kiwi','lemon','melon','nut','orange','pizza','quiche','rice','sushi','turkey','utensil','vinegar','waffle','yogurt','zucchini']
   ## Game list length = 25
   
-  STDGuesses = 3 ## 3 guesses
+  
   STDGuessed = [] ## List of guessed items empty
   Random10List = [] ## List of 10 random items empty
+  print("Please memorise the items on the list\nYou have 10 seconds\n")
   for i in range(10): #Randomly selects 10 words and adds them to a different list
     number = random.randint(1,len(game_list)) ## Number = random number from 1 to 10
     Random10List.append(game_list[number - 1]) 
@@ -94,50 +95,46 @@ def STD(): # Spot the Difference
   Random10List[RandomNumber31 - 1] = game_list[RandomNumber32 - 1]
   Changed3 = Random10List[RandomNumber31 - 1] 
 
+  print("Please type what items have changed\nThree items have been replaced\n")
   
   for i in range(len(Random10List)):
     print(Random10List[i])
 
   
-  while True:
-    itemchoice = input("Choice 1: ")
-    if itemchoice == Changed1 or itemchoice == Changed2 or itemchoice == Changed3:
-      if itemchoice in STDGuessed:
-        print("Already guessed. Try again")
-        while itemchoice in STDGuessed:
-          itemchoice = input("Choice 1: ")
-      else:
-        score = score + 1
-        STDGuessed.append(itemchoice)
-    STDGuesses = STDGuesses - 1
-    if STDGuesses == 0:
-      break
+  
+  print("\n")
+  itemchoice = input("Choice 1: ")
+  if itemchoice == Changed1 or itemchoice == Changed2 or itemchoice == Changed3:
+    if itemchoice in STDGuessed:
+      print("Already guessed. Try again")
+      while itemchoice in STDGuessed:
+        itemchoice = input("Choice 1: ")
+    else:
+      score = score + 1
+      STDGuessed.append(itemchoice)
+  
 
-    itemchoice = input("Choice 2: ")
-    if itemchoice == Changed1 or itemchoice == Changed2 or itemchoice == Changed3:
-      if itemchoice in STDGuessed:
-        print("Already guessed. Try again")
-        while itemchoice in STDGuessed:
-          itemchoice = input("Choice 2: ")
-      else:
-        score = score + 1
-        STDGuessed.append(itemchoice)
-    STDGuesses = STDGuesses - 1
-    if STDGuesses == 0:
-      break
-      
-    itemchoice = input("Choice 3: ")
-    if itemchoice == Changed1 or itemchoice == Changed2 or itemchoice == Changed3:
-      if itemchoice in STDGuessed:
-        print("Already guessed. Try again")
-        while itemchoice in STDGuessed:
-          itemchoice = input("Choice 3: ")
-      else:
-        score = score + 1
-        STDGuessed.append(itemchoice)
-    STDGuesses = STDGuesses - 1
-    if STDGuesses == 0:
-      break
+  itemchoice = input("Choice 2: ")
+  if itemchoice == Changed1 or itemchoice == Changed2 or itemchoice == Changed3:
+    if itemchoice in STDGuessed:
+      print("Already guessed. Try again")
+      while itemchoice in STDGuessed:
+        itemchoice = input("Choice 2: ")
+    else:
+      score = score + 1
+      STDGuessed.append(itemchoice)
+  
+    
+  itemchoice = input("Choice 3: ")
+  if itemchoice == Changed1 or itemchoice == Changed2 or itemchoice == Changed3:
+    if itemchoice in STDGuessed:
+      print("Already guessed. Try again")
+      while itemchoice in STDGuessed:
+        itemchoice = input("Choice 3: ")
+    else:
+      score = score + 1
+      STDGuessed.append(itemchoice)
+  
 
   print(f"You got {score} correct out of 3")
 
