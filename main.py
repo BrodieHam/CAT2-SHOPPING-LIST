@@ -62,20 +62,38 @@ def STD(): # Spot the Difference
   Random10List = [] ## List of 10 random items empty
   for i in range(10): #Randomly selects 10 words and adds them to a different list
     number = random.randint(1,len(game_list)) ## Number = random number from 1 to 10
-    Random10List.append(game_list[number - 1])
+    Random10List.append(game_list[number - 1]) 
     game_list.pop(number - 1)
-  for i in range(len(Random10List)):
-    print(Random10List[i])
-  time.sleep(15)
-  clearConsole()
+  for i in range(len(Random10List)): #Prints each selected item chosen for the random list
+    print(Random10List[i]) #Prints random list of 10
+  time.sleep(10) ## Waits 15 seconds
+  clearConsole() #Clears the r=random list of chosen words
+
   
-  added1 = random.randint(1,len(game_list))
-  Random10List.append(game_list[added1 - 1])
-  added2 = random.randint(1,len(game_list))
-  Random10List.append(game_list[added2 - 1])
+  #Changed1 = random.randint(1,len(Random10List)) ## Changed 1 = random number from 1 to 10
+  #ChangedTo1 = random.randint(1,len(game_list))
+
+
+
   
-  removed = random.randint(1,len(game_list))
-  Random10List.pop(removed)
+  RandomNumber11 = random.randint(1,len(Random10List)) # Random number 1 to 10 for random list
+  RandomNumber12 = random.randint(1,len(game_list)) # Random number 1 to 25 for game list
+
+  Random10List[RandomNumber11 - 1] = game_list[RandomNumber12 - 1]
+  Changed1 = Random10List[RandomNumber11 - 1] 
+
+  RandomNumber21 = random.randint(1,len(Random10List)) # Random number 1 to 10 for random list
+  RandomNumber22 = random.randint(1,len(game_list)) # Random number 1 to 25 for game list
+
+  Random10List[RandomNumber21 - 1] = game_list[RandomNumber22 - 1]
+  Changed2 = Random10List[RandomNumber21 - 1] 
+
+  RandomNumber31 = random.randint(1,len(Random10List)) # Random number 1 to 10 for random list
+  RandomNumber32 = random.randint(1,len(game_list)) # Random number 1 to 25 for game list
+
+  Random10List[RandomNumber31 - 1] = game_list[RandomNumber32 - 1]
+  Changed3 = Random10List[RandomNumber31 - 1] 
+
   
   for i in range(len(Random10List)):
     print(Random10List[i])
@@ -83,7 +101,7 @@ def STD(): # Spot the Difference
   
   while True:
     itemchoice = input("Choice 1: ")
-    if itemchoice == added1 or itemchoice == added2 or itemchoice == removed:
+    if itemchoice == Changed1 or itemchoice == Changed2 or itemchoice == Changed3:
       if itemchoice in STDGuessed:
         print("Already guessed. Try again")
         while itemchoice in STDGuessed:
@@ -96,7 +114,7 @@ def STD(): # Spot the Difference
       break
 
     itemchoice = input("Choice 2: ")
-    if itemchoice == added1 or itemchoice == added2 or itemchoice == removed:
+    if itemchoice == Changed1 or itemchoice == Changed2 or itemchoice == Changed3:
       if itemchoice in STDGuessed:
         print("Already guessed. Try again")
         while itemchoice in STDGuessed:
@@ -109,7 +127,7 @@ def STD(): # Spot the Difference
       break
       
     itemchoice = input("Choice 3: ")
-    if itemchoice == added1 or itemchoice == added2 or itemchoice == removed:
+    if itemchoice == Changed1 or itemchoice == Changed2 or itemchoice == Changed3:
       if itemchoice in STDGuessed:
         print("Already guessed. Try again")
         while itemchoice in STDGuessed:
@@ -118,13 +136,10 @@ def STD(): # Spot the Difference
         score = score + 1
         STDGuessed.append(itemchoice)
     STDGuesses = STDGuesses - 1
-    STDGuessed = STDGuessed + 1
     if STDGuesses == 0:
       break
 
-  if len(STDGuessed) > 0:
-    correct = len(STDGuessed)
-  print(f"You got {correct} correct out of 3")
+  print(f"You got {score} correct out of 3")
 
 
 def main():
