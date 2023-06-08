@@ -143,7 +143,9 @@ def STD(): # Spot the Difference
   
 
   print(f"You got {score} correct out of 3")
-  
+
+  if score == 3:
+    print("Congratulations! You win!")
 
 
 def main():
