@@ -118,25 +118,22 @@ def STD(): # Spot the Difference
   
   
   print("\n")
-  itemchoice = input("Choice 1: ")
-  if itemchoice == Changed1 or itemchoice == Changed2 or itemchoice == Changed3:
-    
+  for i in range(3):
+    itemchoice = input(f"Choice {i+1}: ")
+    if itemchoice == Changed1: 
       score = score + 1
       STDGuessed.append(itemchoice)
-  
+      Changed1 = "random value that no one gonna guess" ## changes changed1 value to a value that they wont guess to cheat
+    elif itemchoice == Changed2: 
+      score = score + 1
+      STDGuessed.append(itemchoice)
+      Changed2 = "another random value no hacking pls" ## changes changed1 value to a value that they wont guess to cheat
+    elif itemchoice == Changed3: 
+      score = score + 1
+      STDGuessed.append(itemchoice)
+      Changed3 = "dont check the code to cheat thats naughty" ## changes changed1 value to a value that they wont guess to cheat
 
-  itemchoice = input("Choice 2: ")
-  if itemchoice == Changed1 or itemchoice == Changed2 or itemchoice == Changed3:
-    
-      score = score + 1
-      STDGuessed.append(itemchoice)
   
-    
-  itemchoice = input("Choice 3: ")
-  if itemchoice == Changed1 or itemchoice == Changed2 or itemchoice == Changed3:
-    
-      score = score + 1
-      STDGuessed.append(itemchoice)
   
 
   print(f"You got {score} correct out of 3")
