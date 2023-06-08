@@ -1,5 +1,14 @@
 ### SHOPPING LIST GAME ###
 ## By Lachlan and Brodie ##
+
+#  
+#  
+#  
+#  
+#  
+
+
+
 import os
 import random
 import time
@@ -111,33 +120,21 @@ def STD(): # Spot the Difference
   print("\n")
   itemchoice = input("Choice 1: ")
   if itemchoice == Changed1 or itemchoice == Changed2 or itemchoice == Changed3:
-    if itemchoice in STDGuessed:
-      print("Already guessed. Try again")
-      while itemchoice in STDGuessed:
-        itemchoice = input("Choice 1: ")
-    else:
+    
       score = score + 1
       STDGuessed.append(itemchoice)
   
 
   itemchoice = input("Choice 2: ")
   if itemchoice == Changed1 or itemchoice == Changed2 or itemchoice == Changed3:
-    if itemchoice in STDGuessed:
-      print("Already guessed. Try again")
-      while itemchoice in STDGuessed:
-        itemchoice = input("Choice 2: ")
-    else:
+    
       score = score + 1
       STDGuessed.append(itemchoice)
   
     
   itemchoice = input("Choice 3: ")
   if itemchoice == Changed1 or itemchoice == Changed2 or itemchoice == Changed3:
-    if itemchoice in STDGuessed:
-      print("Already guessed. Try again")
-      while itemchoice in STDGuessed:
-        itemchoice = input("Choice 3: ")
-    else:
+    
       score = score + 1
       STDGuessed.append(itemchoice)
   
