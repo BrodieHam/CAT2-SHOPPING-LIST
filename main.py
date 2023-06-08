@@ -42,6 +42,10 @@ def delete_item(shopping_list):
         print("Invalid input. Enter a valid index or 'q' to cancel.")
 
 def memoryGame(shopping_list):
+  display_shopping_list(shopping_list)
+  print("\n")
+  time.sleep(10)
+  clearConsole()
   score = 0
   guesses = len(shopping_list)
   guessedlist = []
