@@ -1,5 +1,5 @@
 ### SHOPPING LIST GAME ###
-## By Lachlan and Brody ##
+## By Lachlan and Brodie ##
 import os
 import random
 import time
@@ -79,18 +79,24 @@ def STD(): # Spot the Difference
   
   RandomNumber11 = random.randint(1,len(Random10List)) # Random number 1 to 10 for random list
   RandomNumber12 = random.randint(1,len(game_list)) # Random number 1 to 25 for game list
-
+  while RandomNumber12 in Random10List:
+    RandomNumber12 = random.randint(1,len(game_list)) # Get another Random number 1 to 25 for game list
+ 
   Random10List[RandomNumber11 - 1] = game_list[RandomNumber12 - 1]
   Changed1 = Random10List[RandomNumber11 - 1] 
 
   RandomNumber21 = random.randint(1,len(Random10List)) # Random number 1 to 10 for random list
   RandomNumber22 = random.randint(1,len(game_list)) # Random number 1 to 25 for game list
+  while RandomNumber22 in Random10List:
+    RandomNumber22 = random.randint(1,len(game_list)) # Get another Random number 1 to 25 for game list
 
   Random10List[RandomNumber21 - 1] = game_list[RandomNumber22 - 1]
   Changed2 = Random10List[RandomNumber21 - 1] 
 
   RandomNumber31 = random.randint(1,len(Random10List)) # Random number 1 to 10 for random list
   RandomNumber32 = random.randint(1,len(game_list)) # Random number 1 to 25 for game list
+  while RandomNumber32 in Random10List:
+    RandomNumber32 = random.randint(1,len(game_list)) # Get another Random number 1 to 25 for game list
 
   Random10List[RandomNumber31 - 1] = game_list[RandomNumber32 - 1]
   Changed3 = Random10List[RandomNumber31 - 1] 
@@ -137,6 +143,7 @@ def STD(): # Spot the Difference
   
 
   print(f"You got {score} correct out of 3")
+  
 
 
 def main():
