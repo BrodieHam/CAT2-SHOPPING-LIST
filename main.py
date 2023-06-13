@@ -4,15 +4,17 @@
 ### The program will allow the user to display the shopping list and modify the shopping list by adding or removing items. There are also two games to play using lists. The memory game asks the user to memorize their shopping list and recount all their items. The spot the difference game shows the user a list of items and after 10 seconds the list changes. The user needs to input the 3 items that changed. You can also exit the program.
 
 
-
-import os
+# imports for clear console, random number, time and coloured text
+import os 
 import random
 import time
 from simple_colors import *
 
+# Clear Console Function clears the console of text. It wipes and 'refreshes' the screen.
 def clearConsole():
   os.system("clear")
-  
+
+# Display shopping list shows each item on the list on a seperate line
 def display_shopping_list(shopping_list):
     if not shopping_list:
         print(red("Your shopping list is empty.\n"))
@@ -21,9 +23,13 @@ def display_shopping_list(shopping_list):
       for item in shopping_list:
         print(item)
 
+# Adds item to shopping list
 def add_item(shopping_list):
-    pass
+    addlist = input("What item would you like to add? ")
+    print(blue(f"Added {addlist} to your Shopping List."))
+    shopping_list.append(addlist)
 
+# Deletes item from shopping list
 def delete_item(shopping_list):
     if len(shopping_list) == 0:
       print(red("Your shopping list is empty.\n"))
@@ -42,6 +48,7 @@ def delete_item(shopping_list):
     except ValueError:
         print(red("Invalid input. Enter a valid index or 'q' to cancel."))
 
+# The memory game asks the user to memorize their shopping list and recount all their items
 def memoryGame(shopping_list):
   if len(shopping_list) == 0:
       print(red("Your shopping list is empty.\n"))
@@ -69,8 +76,9 @@ def memoryGame(shopping_list):
   correct = len(guessedlist)
   length = len(shopping_list)
   print(green(f"You got {correct} correct out of {length}"))
-  
-def STD(): # Spot the Difference
+
+# Spot the difference game
+def STD(): # Spot the Difference game
   score = 0 # Score to 0
   game_list = ['apple','banana','cake','donut','egg','fish','grape','ham','ice','jam','kiwi','lemon','melon','nut','orange','pizza','quiche','rice','sushi','turkey','utensil','vinegar','waffle','yogurt','zucchini']
   ## Game list length = 25
@@ -146,7 +154,7 @@ def STD(): # Spot the Difference
   if score == 3:
     print(green("\nCongratulations! You win!"))
 
-
+# main code runs until you exit
 def main():
     shopping_list = ["apple", "banana", "orange"] #####
     while True:
@@ -161,9 +169,8 @@ def main():
         if choice == '1':
           display_shopping_list(shopping_list)
         elif choice == '2':
-          addlist = input("What item would you like to add? ")
-          print(blue(f"Added {addlist} to your Shopping List."))
-          shopping_list.append(addlist)
+          add_item(shopping_list)
+          
         elif choice == '3':
           delete_item(shopping_list)
         elif choice == '4':
