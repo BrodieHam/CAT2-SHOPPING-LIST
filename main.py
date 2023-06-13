@@ -12,14 +12,16 @@
 import os
 import random
 import time
+from simple_colors import *
+
 def clearConsole():
   os.system("clear")
   
 def display_shopping_list(shopping_list):
     if not shopping_list:
-        print("Your shopping list is empty.\n")
+        print(red("Your shopping list is empty.\n"))
     else:
-      print("Your Shopping list: ") 
+      print(blue("Your Shopping list: "))
       for item in shopping_list:
         print(item)
 
@@ -34,12 +36,12 @@ def delete_item(shopping_list):
     try:
         index = int(index)
         if index < 1 or index > len(shopping_list):
-            print("Invalid index.")
+            print(red("Invalid index."))
         else:
             item = shopping_list.pop(index - 1)
-            print(f"{item} has been removed from the shopping list.")
+            print(blue(f"{item} has been removed from the shopping list."))
     except ValueError:
-        print("Invalid input. Enter a valid index or 'q' to cancel.")
+        print(red("Invalid input. Enter a valid index or 'q' to cancel."))
 
 def memoryGame(shopping_list):
   display_shopping_list(shopping_list)
@@ -53,9 +55,9 @@ def memoryGame(shopping_list):
     itemchoice = input(f"Choice {i+1}: ")
     if itemchoice in shopping_list:
       if itemchoice in guessedlist:
-        print("Already guessed. Try again")
+        print(red("Already guessed. Try again"))
         while itemchoice in guessedlist:
-          itemchoice = input(f"Choice {i}")
+          itemchoice = input(f"Choice {i+1}: ")
       else:
         score = score + 1
         guessedlist.append(itemchoice)
@@ -63,7 +65,8 @@ def memoryGame(shopping_list):
     if guesses == 0:
       break
   correct = len(guessedlist)
-  print(f"You got {correct} correct out of ", len(shopping_list))
+  length = len(shopping_list)
+  print(green(f"You got {correct} correct out of {length}"))
   
 def STD(): # Spot the Difference
   score = 0 # Score to 0
@@ -73,7 +76,7 @@ def STD(): # Spot the Difference
   
   STDGuessed = [] ## List of guessed items empty
   Random10List = [] ## List of 10 random items empty
-  print("Please memorise the items on the list\nYou have 10 seconds\n")
+  print(blue("Please memorise the items on the list\nYou have 10 seconds\n"))
   for i in range(10): #Randomly selects 10 words and adds them to a different list
     number = random.randint(1,len(game_list)) ## Number = random number from 1 to 10
     Random10List.append(game_list[number - 1]) 
@@ -114,7 +117,7 @@ def STD(): # Spot the Difference
   Random10List[RandomNumber31 - 1] = game_list[RandomNumber32 - 1]
   Changed3 = Random10List[RandomNumber31 - 1] 
 
-  print("Please type what items have changed\nThree items have been replaced\n")
+  print(blue("Please type what items have changed\nThree items have been replaced\n"))
   
   for i in range(len(Random10List)):
     print(Random10List[i])
@@ -140,10 +143,10 @@ def STD(): # Spot the Difference
   
   
 
-  print(f"You got {score} correct out of 3")
+  print(green(f"You got {score} correct out of 3"))
 
   if score == 3:
-    print("Congratulations! You win!")
+    print(green("\nCongratulations! You win!"))
 
 
 def main():
@@ -161,7 +164,7 @@ def main():
           display_shopping_list(shopping_list)
         elif choice == '2':
           addlist = input("What item would you like to add? ")
-          print(f"Added {addlist} to your Shopping List.")
+          print(blue(f"Added {addlist} to your Shopping List."))
           shopping_list.append(addlist)
         elif choice == '3':
           delete_item(shopping_list)
@@ -170,10 +173,10 @@ def main():
         elif choice == '5':
           STD()
         elif choice == '6':
-          print("Thanks for shopping at Coles")  
+          print(green("Thanks for shopping at Coles"))
           break
         else:
-          print("Invalid choice. Please try again.")
+          print(red("Invalid choice. Please try again."))
         
 
 main()
