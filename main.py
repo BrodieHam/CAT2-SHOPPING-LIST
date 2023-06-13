@@ -29,6 +29,9 @@ def add_item(shopping_list):
     pass
 
 def delete_item(shopping_list):
+    if len(shopping_list) == 0:
+      print(red("Your shopping list is empty.\n"))
+      return
     display_shopping_list(shopping_list)
     index = input("Enter the number of the item you want to delete (or 'q' to cancel): ")
     if index == 'q':
@@ -44,6 +47,9 @@ def delete_item(shopping_list):
         print(red("Invalid input. Enter a valid index or 'q' to cancel."))
 
 def memoryGame(shopping_list):
+  if len(shopping_list) == 0:
+      print(red("Your shopping list is empty.\n"))
+      return
   display_shopping_list(shopping_list)
   print("\n")
   time.sleep(10)
@@ -134,11 +140,11 @@ def STD(): # Spot the Difference
     elif itemchoice == Changed2: 
       score = score + 1
       STDGuessed.append(itemchoice)
-      Changed2 = "another random value no hacking pls" ## changes changed1 value to a value that they wont guess to cheat
+      Changed2 = "another random value no hacking pls" ## changes changed2 value to a value that they wont guess to cheat
     elif itemchoice == Changed3: 
       score = score + 1
       STDGuessed.append(itemchoice)
-      Changed3 = "dont check the code to cheat thats naughty" ## changes changed1 value to a value that they wont guess to cheat
+      Changed3 = "dont check the code to cheat thats naughty" ## changes changed3 value to a value that they wont guess to cheat
 
   
   
