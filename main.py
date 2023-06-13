@@ -1,11 +1,7 @@
 ### SHOPPING LIST GAME ###
 ## By Lachlan and Brodie ##
 
-#  
-#  
-#  
-#  
-#  
+### The program will allow the user to display the shopping list and modify the shopping list by adding or removing items. There are also two games to play using lists. The memory game asks the user to memorize their shopping list and recount all their items. The spot the difference game shows the user a list of items and after 10 seconds the list changes. The user needs to input the 3 items that changed. You can also exit the program.
 
 
 
@@ -89,14 +85,10 @@ def STD(): # Spot the Difference
     game_list.pop(number - 1)
   for i in range(len(Random10List)): #Prints each selected item chosen for the random list
     print(Random10List[i]) #Prints random list of 10
-  time.sleep(10) ## Waits 15 seconds
+  time.sleep(10) ## Waits 10 seconds
   clearConsole() #Clears the r=random list of chosen words
 
   
-  #Changed1 = random.randint(1,len(Random10List)) ## Changed 1 = random number from 1 to 10
-  #ChangedTo1 = random.randint(1,len(game_list))
-
-
 
   
   RandomNumber11 = random.randint(1,len(Random10List)) # Random number 1 to 10 for random list
